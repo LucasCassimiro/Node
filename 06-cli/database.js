@@ -20,6 +20,8 @@ class Database {
         return true
     }
     async cadastrar(heroi) {
+        delete heroi.id
+
         const dados = await this.obterDadosArquivo()
         const id = heroi.id <= 2 ? heroi.id : Date.now();
 
