@@ -1,4 +1,4 @@
-const ICrude = require('./../interfaces/interfaceCrud')
+const ICrude = require('../interfaces/interfaceCrud')
 
 class ContextStrategy {
     constructor(strategy){
