@@ -36,4 +36,5 @@ docker exec -it mongodb mongo --host localhost -u admin -p senhaadmin --authenti
 Para conectar:
 Rodar o container do mongo:4 (mongodb);
 Encontrar o id do container da imagem mongoclient/mongoclient;
-Startar o container de id encontrado.
+Startar o container de id encontrado;
+Rodar a imagen do mongoclient/mongoclient.
