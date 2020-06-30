@@ -1,5 +1,7 @@
 const ICrud = require('./interfaces/interfaceCrud')
 const Mongoose = require('mongoose')
+const Sequelize = require('sequelize')
+
 const STATUS = {
     0: 'Disconectado',
     1: 'Conectado',
@@ -25,7 +27,7 @@ class MongoDB extends ICrud {
 
     }
     defineModel() {
-        heroiSchema = new Mongoose.Schema({
+        const heroiSchema = new Mongoose.Schema({
             nome: {
                 type: String,
                 required: true
@@ -52,14 +54,15 @@ class MongoDB extends ICrud {
         const connection = Mongoose.connection
         this._driver = connection
         connection.once('open', () => console.log('Database rodando!'))
+        this.defineModel()
         
+    }   
+    create(item) {
+        return this._herois.create(item)
     }
-    async create(item) {
-        const resultCadastrar = await model.create({
-            nome: 'Batman',
-            poder: 'Dinheiro'
-        })
-        console.log('result cadastrar', resultCadastrar)
+    read(item, skip=0, limit=10){
+        return this._herois.find(item).skip(skip).limit(limit)
+        // return this._herois.count()
     }
 }
 

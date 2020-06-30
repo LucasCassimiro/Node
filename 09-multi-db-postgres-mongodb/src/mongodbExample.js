@@ -1,3 +1,4 @@
+const Sequelize = require('sequelize')
 const Mongoose = require('mongoose')
 Mongoose.connect('mongodb://lucas:lucas@localhost:27017/herois', 
 {useNewUrlParser: true}, function (error){
