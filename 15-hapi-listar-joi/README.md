@@ -32,3 +32,11 @@ docker exec -it mongodb mongo --host localhost -u admin -p senhaadmin --authenti
  mongo mongodb:27017  -u lucas -p lucas --authenticationDatabase herois
 
  docker exec -it mongodb mongo -u lucas -p lucas --authenticationDatabase herois
+
+Para conectar:
+Rodar o container do mongo:4 (mongodb); 3bc02501c883
+Encontrar o id do container da imagem mongoclient/mongoclient; 0faf6a7a47c3
+Startar o container de id encontrado (se precisar); a71f25d8668f
+Rodar a imagen do mongoclient/mongoclient.
+
+Postgres: 01d5506bc818  adminer: 9c515af40a41
