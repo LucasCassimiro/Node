@@ -14,6 +14,7 @@ class MongoDB extends ICrud {
         super()
         this._schema = schema
         this._connection = connection
+        
     }
     async isConnected() {
         const state = STATUS[this._connection.readyState]
