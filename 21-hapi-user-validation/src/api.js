@@ -2,6 +2,8 @@
 //npm install vision inert hapi-swagger
 //npm install bcrypt
 
+
+
 const Hapi = require('hapi')
 const Context = require('./db/strategies/base/contextStrategy')
 const MongoDb = require('./db/strategies/mongodb/mongodb')
@@ -17,10 +19,10 @@ const Vision = require('vision')
 const Inert = require('inert')
 
 const HapiJwt = require('hapi-auth-jwt2')
-const JWT_SECRET = 'MEU_SEGREDÃO_123'
 
+const JWT_SECRET = process.env.JWT_kEY
 const app = new Hapi.Server({
-    port: 5000
+    port: process.env.PORT
 })
 
 function mapRoutes(instance, methods) {
